@@ -1,9 +1,9 @@
 ﻿#include <iostream>
-#include"Date.h"
+#include"Customer.h"
 int main()
 {
-    Date x;
-    x.setDate();
-    x.show();
+    Customer x;
+    x.nhap();
+    x.xuat();
 }
 

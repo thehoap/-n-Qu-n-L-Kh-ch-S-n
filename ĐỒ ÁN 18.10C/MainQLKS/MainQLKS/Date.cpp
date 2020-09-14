@@ -64,5 +64,5 @@ void Date::setDate() {
 	this->year = nYear;
 }
 void Date::show() {
-	cout << "Date:" << day << "/" << month << "/" << year << endl;
+	cout << setw(2) << day << "/" << setw(2) << month << "/" << setw(4) << year;
 }
