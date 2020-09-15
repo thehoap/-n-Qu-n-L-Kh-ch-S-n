@@ -6,10 +6,9 @@ void Customer::nhap() {
 	//nhap ma hoa don
 	do
 	{
-		cout << "Ma hoa don:";
-		cin.ignore();
+		cout << "Ma hoa don: ";
 		getline(cin, Mahoadon);
-		if (Cmnd.length() == 10) {
+		if (Mahoadon.length() == 9) {
 			break;
 		}
 		else {
@@ -18,12 +17,13 @@ void Customer::nhap() {
 		}
 	} while (true);
 	//nhap ten
-	cout << "Nhap ten:";
-	getline(cin, Ten);
+	cout << "Nhap ten: ";
+	//cin.ignore();
+	getline(cin,Ten);
 	//nhap so cmnd
 	do
 	{
-		cout << "Nhap so cmnd:";
+		cout << "Nhap so cmnd: ";
 		getline(cin,Cmnd);
 		if (Cmnd.length() == 9) {
 			break;
@@ -49,9 +49,13 @@ void Customer::nhap() {
 	cin.ignore();
 	do
 	{
-		cout << "Nhap ten phong:";
+		cout << "Nhap ten phong: ";
 		getline(cin, Tenphong);
-		if (Tenphong[0] < 65 || Tenphong[0]>90) {	
+		if (Tenphong.length() != 4) {
+			cout << "Ten phong da nhap khong phu hop!!" << endl;
+			cout << "Ten phong chi gom 4 ki tu!!" << endl;
+		}
+		else if (Tenphong[0] < 65 || Tenphong[0]>90) {	
 			cout << "Ten phong da nhap khong phu hop!!" << endl;
 			cout << "Ten phai bat dau bang 1 chu cai in hoa!!" << endl;
 		}
@@ -89,7 +93,7 @@ void Customer::nhap() {
 	this->ngaydi = Ngaydi;
 }
 //tinh tổng số ngày từ 0/0/0 đến hiện tại
-int thisIsMagic(int year, int month, int day) {
+int Sumday(int year, int month, int day) {
 	if (month < 3) {
 		year--;
 		month += 12;
@@ -110,13 +114,14 @@ void Customer::xuat() {
 	else if (loaiphong == "B") dongia = 300;
 	else dongia = 250;
 	//tien phong
-	int numberOfDays = thisIsMagic(ngaydi.getYear(), ngaydi.getMonth(), ngaydi.getDay()) - thisIsMagic(ngayden.getYear(), ngayden.getMonth(), ngayden.getDay());
-	tienphong = numberOfDays * dongia;
+	int numberOfDays = Sumday(ngaydi.getYear(), ngaydi.getMonth(), ngaydi.getDay()) - Sumday(ngayden.getYear(), ngayden.getMonth(), ngayden.getDay());
+	tienphong = (numberOfDays+1) * dongia;
 	//in thong tin theo format
-	cout << setw(10) <<left<< mahoadon << setw(15) << ten << setw(12) <<  cmnd << setw(5)  << gender << setw(6)  << tenphong << setw(5) << loaiphong;
-	cout << setw(14);
+	cout << setw(12) <<left<< mahoadon << setw(18) << left << ten << setw(11) << left << cmnd << setw(5)  << left << gender << setw(6)  << tenphong << setw(3) << left << loaiphong;
+	cout << setw(2)<<left<<"  ";
 	ngayden.show();
-	cout << setw(14);
+	cout << setw(2) << left << "  ";
 	ngaydi.show();
-	cout << setw(5) << dongia << setw(10)<< tienphong << endl;
+	cout << setw(2) << left << " ";
+	cout << setw(3) << left << dongia << setw(7)<< right << tienphong << endl;
 }
