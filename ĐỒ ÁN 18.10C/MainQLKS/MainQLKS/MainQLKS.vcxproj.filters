@@ -24,6 +24,9 @@
     <ClCompile Include="Customer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ListCustomer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -32,5 +35,13 @@
     <ClInclude Include="Customer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ListCustomer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Danhsach.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

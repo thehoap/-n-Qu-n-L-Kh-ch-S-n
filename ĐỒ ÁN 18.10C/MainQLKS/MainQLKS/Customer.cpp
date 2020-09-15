@@ -4,9 +4,19 @@ void Customer::nhap() {
 	bool Gioitinh;
 	Date Ngayden, Ngaydi; 
 	//nhap ma hoa don
-	cout << "Ma hoa don:";
-	cin.ignore();
-	getline(cin, Mahoadon);
+	do
+	{
+		cout << "Ma hoa don:";
+		cin.ignore();
+		getline(cin, Mahoadon);
+		if (Cmnd.length() == 10) {
+			break;
+		}
+		else {
+			cout << "Ma hoa don gom co 9 ki tu!!" << endl;
+			cout << "Nhap lai ma hoa don!!" << endl;
+		}
+	} while (true);
 	//nhap ten
 	cout << "Nhap ten:";
 	getline(cin, Ten);

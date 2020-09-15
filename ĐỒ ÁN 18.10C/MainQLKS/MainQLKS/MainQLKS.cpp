@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include"Customer.h"
+#include"ListCustomer.h"
 int main()
 {
     Customer x;
